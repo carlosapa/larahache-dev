@@ -114,7 +114,7 @@
 
 
 		<div class="title_holder">
-			<h2 class="title js-scroll-noticias">Noveddes</h2 class="title">
+			<h2 class="title js-scroll-noticias">Novedades</h2 class="title">
 		</div>
 		<div id="post-feed">	
 			<div id="feed-block" class="video">
