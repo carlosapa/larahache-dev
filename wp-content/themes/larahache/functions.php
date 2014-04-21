@@ -84,7 +84,50 @@ function today ($date) {
 	}
 }
 
+// Register Custom Post Type
+function slider_custom_post_type() {
 
+	$labels = array(
+		'name'                => _x( 'Slider', 'Post Type General Name', 'text_domain' ),
+		'singular_name'       => _x( 'Slider', 'Post Type Singular Name', 'text_domain' ),
+		'menu_name'           => __( 'Sliders', 'text_domain' ),
+		'parent_item_colon'   => __( 'Elemento superior:', 'text_domain' ),
+		'all_items'           => __( 'Todos los elementos', 'text_domain' ),
+		'view_item'           => __( 'Ver elemento', 'text_domain' ),
+		'add_new_item'        => __( 'Añadir elemento', 'text_domain' ),
+		'add_new'             => __( 'Añadir nuevo', 'text_domain' ),
+		'edit_item'           => __( 'Editar elemento', 'text_domain' ),
+		'update_item'         => __( 'Actualizar elemento', 'text_domain' ),
+		'search_items'        => __( 'Buscar', 'text_domain' ),
+		'not_found'           => __( 'No encontrado', 'text_domain' ),
+		'not_found_in_trash'  => __( 'No encontrado en papelera', 'text_domain' ),
+	);
+	$args = array(
+		'label'               => __( 'slider', 'text_domain' ),
+		'description'         => __( 'slider', 'text_domain' ),
+		'labels'              => $labels,
+		'supports'            => array( 'title', 'editor', 'comments', 'excerpt', 'custom-fields', 'thumbnail', 'gallery' ),
+		'taxonomies'          => array( 'category', 'post_tag' ),
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+		'menu_position'       => 4,
+		'menu_icon'           => '',
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+	);
+	register_post_type( 'slider', $args );
+
+}
+
+// Hook into the 'init' action
+add_action( 'init', 'slider_custom_post_type', 0 );
 
 
 ?>

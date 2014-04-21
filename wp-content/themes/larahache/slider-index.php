@@ -1,7 +1,7 @@
 <?php
 
 ?>
-<a class="title js-scroll-bio-lara"></a>
+<a class="title js-scroll-bio-lara"></a><!-- Anchor for the Bio-Lara part -->
 
 <div id="featured">
 	<div id="bio">
