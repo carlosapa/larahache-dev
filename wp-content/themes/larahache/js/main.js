@@ -5,7 +5,7 @@ window.onload = function () {
 	read_more_prensa_functions(); //read more en functions
 	center_imgs(); //centering images
 	picasa_feed();
-	init_slider();
+	//init_slider();
 	init_agenda();
 
 	init_auto_scroll_functions();//links scroll
