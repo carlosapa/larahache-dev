@@ -182,8 +182,155 @@ ul#social-menu {
 	box-shadow: 0 2px 3px rgba(121, 121, 121, 0.42);
 }
 
+/* ==== SLIDER HOME ==== */
+#slider-home-holder {
+	width: 1080px;
+	margin: 0px auto;
+	overflow: hidden;
+	border: 1px solid red;
+}
 
+ul#slider-home {
+	padding: 0px;
+	margin: 0px;
+	overflow: hidden;
+	width: 300%;
+	margin-left: -2160px;
+}
 
+ul#slider-home > li {
+	list-style: none;
+	width: 1080px;
+	float: left;
+	overflow: hidden;
+	display: inline-block;
+	padding: 0px;
+}
+
+/* 1er slider */
+
+#slider-presentaciones .pull-left-wide {
+	float: left;
+	width: 60%;
+	height: 370px;
+	position: relative;
+}
+
+.pull-left-wide img {
+	width: 100%;
+	height: auto;
+}
+
+.pull-left-wide #caption {
+	position: absolute;
+	bottom: 10px;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.44);
+	height: 72px;
+	padding: 10px 20px;
+}
+
+.pull-left-wide #caption #bio-name {
+	color: #444;
+	background: #DBDBDB;
+	display: inline-block;
+	margin: 3px 20px 0 8px;
+	padding: 1px 7px;
+	border-radius: 3px;
+	clear: both;
+	text-transform: uppercase;
+	font-family: 'Roboto Condensed', sans-serif;
+}
+
+#slider-presentaciones .pull-right-thin {
+	width: 40%;
+	display: inline-block;
+	margin: 0px;
+}
+
+.pull-right-thin #bio-text {
+	width: 100%;
+	display: block;
+	overflow: hidden;
+	padding: 0 0 0 20px;
+}
+
+.pull-right-thin #bio-text .data {
+	transition: 250ms ease;
+		-moz-transition: 250ms ease;
+		-webkit-transition: 250ms ease;
+	padding: 0 0 0 18px;
+	border-left: 2px solid rgb(207, 207, 207);
+	margin-bottom: 0;
+	height: 125px;
+}
+
+.pull-right-thin #bio-text .data > p {
+	margin: 0 0 1em;
+}
+
+.pull-right-thin #bio-text .read-more {
+	margin: 0px 0 0 20px;
+	display: inline-block;
+	background: #C0C0C0;
+	padding: 2px 13px;
+	color: #fff;
+	text-transform: uppercase;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 1.2em;
+	border-radius: 3px;
+	position: absolute;
+	bottom: 50px;
+	border: 1px solid #B3B3B3;
+}
+
+/* 2ndd slider */
+
+#slider-video .pull-left-half {
+	float: left;
+	width: 50%;
+	height: 370px;
+	position: relative;
+}
+
+.pull-left-half #video-cont {
+	margin: 0;
+	padding: 0;
+}
+
+#slider-video .pull-right-half {
+	float: right;
+	width: 50%;
+	height: 370px;
+	position: relative;
+}
+
+.pull-right-half #feed-title.video {
+	margin: 0px;
+	width: 77%;
+	max-width: none;
+	float: none;
+}
+.pull-right-half #tiny-gallery {
+	margin: 90px 0 0 0;
+}
+
+.pull-right-half #feed-title.gallery {
+	margin: 0px;
+	max-width: none;
+	float: none;
+}
+
+.pull-right-half #tiny-gallery-images {
+	margin: 10px 0 0 0;
+}
+
+#tiny-gallery-images div {
+	display: block;
+	float: left;
+	margin: 0 3px 3px 0;
+	overflow: hidden;
+}
 
 /* ==== BIO-LARA ==== */
 
