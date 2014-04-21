@@ -145,7 +145,7 @@ var read_more_functions = function () {
 					ev.target.innerHTML = 'Cerrar texto';
 				} else {
 					bio_text.style.height = '90px';
-					ev.target.style.bottom = '140px';
+					ev.target.style.bottom = '120px';
 					ev.target.innerHTML = 'Volver a abrirlo';
 				}
 			}

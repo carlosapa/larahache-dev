@@ -45,11 +45,17 @@
 					<div id="prensa-info">
 						<div id="prensa-header">
 							<div id="prensa-title"><?php echo $prensa_post[$i]->post_title; ?></div>
-							<div id="prensa-date"><?php echo get_prensa_date($prensa_meta['article_date'][0]) ?></div>
-							<div id="prensa-date"><?php echo $prensa_meta['article_author'][0] ?></div>	
-							<div id="prensa-date"><?php echo $prensa_meta['article_media'][0] ?></div>		
+							<div id="prensa-title-lat">
+								<div id="prensa-date"><?php echo get_prensa_date($prensa_meta['article_date'][0]) ?></div>
+								<div id="prensa-date"><?php echo $prensa_meta['article_author'][0] ?></div>	
+								<div id="prensa-media"><?php echo $prensa_meta['article_media'][0] ?></div>		
+							</div>
 						</div>
-						<div id="prensa-subtitle"><?php echo $prensa_meta['article_subtitle'][0] ?></div>
+						<?php 
+						if ($prensa_meta['article_subtitle'][0] !== "") {
+							?><div id="prensa-subtitle"><?php echo $prensa_meta['article_subtitle'][0] ?></div><?php
+						}
+						?>
 						<div id="prensa-content"><?php echo content_to($prensa_post[$i]->ID); ?></div>
 						<div class="prensa-lee">Seguir leyendo</div>
 						<div id="prensa-readmore"><a href="<?php echo $prensa_meta['article_link'][0] ?>" target="_blank">Ver link original en <?php echo $prensa_meta['article_media'][0] ?> </a></div>
