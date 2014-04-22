@@ -49,7 +49,7 @@ var init_slider = function () {
 		/*resizeContents: false,*/
 		buildArrows : true,
 		hashTags: false,
-		infiniteSlides: true,
+		infiniteSlides: false,
 		delay: 6000
 	});
 
