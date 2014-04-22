@@ -41,4 +41,5 @@
 		</div>	
 	</div><!-- end of feed -->
 </div>
+
 <?php get_footer(); ?>

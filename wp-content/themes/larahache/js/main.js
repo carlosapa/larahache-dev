@@ -34,11 +34,12 @@ var init_slider = function () {
 		delay: 6000
 	});
 
-	var timer = window.setTimeout(function() {
-		slider.animate({
-			'opacity': 1
-		}, 250);
-	}, 500);
+	slider.on('slide_begin', function(e, slider) {
+		if (slider.currentPage == 1) {
+			open_intro_text('#slider-home-holder', 381);
+		}
+	});
+
 };
 
 
@@ -104,8 +105,6 @@ var read_more_prensa_functions = function () {
 
 		}, false);
 	}
-
-
 };
 
 /* ====================== */
@@ -123,10 +122,12 @@ var read_more_functions = function () {
 				ev.target.classList.toggle('open')
 				
 				if(!ev.target.classList.contains('open')) {
+					open_intro_text('#slider-home-holder', 800);
 					bio_text.style.height = '470px';
 					ev.target.style.bottom = '0px';
 					ev.target.innerHTML = 'Cerrar texto';
 				} else {
+					open_intro_text('#slider-home-holder', 370);
 					bio_text.style.height = '90px';
 					ev.target.style.bottom = '120px';
 					ev.target.innerHTML = 'Volver a abrirlo';
@@ -135,7 +136,12 @@ var read_more_functions = function () {
 
 		}, false);
 	}
-}
+};
+
+var open_intro_text = function (selector, px) {
+	var holder = document.querySelector(selector);
+	holder.style.height = px + 'px';
+};
 
 var dw_getScrollOffsets = function () { //funcion sacada de http://www.dyn-web.com/javascript/scroll-distance/
     var doc = document, w = window;
