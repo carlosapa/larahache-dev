@@ -1,1 +1,9 @@
+# Created by http://www.gitignore.io
+
+### WordPress ###
+.htaccess
+wp-content/*
+sitemap.xml
+*.log
+sitemap.xml.gz
 wp-config.php
