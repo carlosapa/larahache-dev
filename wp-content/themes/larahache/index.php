@@ -130,7 +130,7 @@
 			<h2 class="title js-scroll-twitter">Twitter</h2 class="title">
 		</div>
 		<div id="twitter-feed">
-			<a class="twitter-timeline" width="268" height="600" border-color="#f5f5f5"  data-chrome="noborders" href="https://twitter.com/larahache" lang="es" data-widget-id="456199975441924096">Tweets por @larahache</a>
+			<a class="twitter-timeline" width="300" height="600" border-color="#f5f5f5"  data-chrome="noborders" href="https://twitter.com/larahache" lang="es" data-widget-id="456199975441924096">Tweets por @larahache</a>
 			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 		</div>
 		<!--<div class="title_holder">

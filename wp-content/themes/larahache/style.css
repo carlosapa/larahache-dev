@@ -454,8 +454,8 @@ ul#slider-home > li {
 /* ==== MAIN ==== */
 
 #home_wrapper {
-	width: 960px;
-	min-width: 960px;
+	width: 1080px;
+	min-width: 1080px;
 	margin: 0px auto;
 	overflow: hidden;
 }
