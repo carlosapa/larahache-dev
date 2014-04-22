@@ -1,3 +1,9 @@
-/dev/*
-!wp-content/*
-wp-content/plugins/wordpress-importer/languages/wordpress-importer.pot
+# Created by http://www.gitignore.io
+
+### WordPress ###
+.htaccess
+wp-content/*
+sitemap.xml
+*.log
+sitemap.xml.gz
+wp-config.php
