@@ -1,2 +1,2 @@
-!wp-content/themes/larahache/
-!github.php
+/dev/*
+!wp-content/*
