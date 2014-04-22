@@ -60,6 +60,7 @@ var init_slider = function () {
 	}, 500);
 };
 
+
 /* ====================== */
 
 var init_scroll_functions = function() {

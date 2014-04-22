@@ -83,4 +83,7 @@
 
 		</ul>
 	</div>
+	<div id="labels">
+		<div>
+	</div>
 </div>
