@@ -1,2 +1,3 @@
 /dev/*
 !wp-content/*
+wp-content/plugins/wordpress-importer/languages/wordpress-importer.pot
