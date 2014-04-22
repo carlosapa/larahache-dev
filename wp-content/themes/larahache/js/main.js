@@ -1,5 +1,4 @@
 window.onload = function () {
-	init_wall(); //iniciar muro
 	init_scroll_functions(); //scrolleo
 	read_more_functions(); //read more en home
 	read_more_prensa_functions(); //read more en functions
@@ -15,24 +14,6 @@ window.onload = function () {
 };
 
 /* ====================== */
-
-var init_wall = function () {
-	var wall = new freewall('#post-gallery-holder');
-	var selector = $('.js-wall-item');
-	
-	wall.reset({
-		animate: true,
-		gutterY: 10,
-	  	gutterX: 'auto'
-	});
-
-	wall.fixSize({
-		block: selector,
-		height: 150, 
-		width: 220
-	});
-	wall.fitWidth();
-};
 
 /* ====================== */
 
