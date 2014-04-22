@@ -64,12 +64,6 @@
 			<h2 class="title js-scroll-noticias">Novedades</h2 class="title">
 		</div>
 		<div id="post-feed">	
-			<div id="feed-block" class="video">
-				<div id="feed-title" class="video">Intervención en la Asamblea de Madrid</div>
-				<div id="video-cont">
-					<iframe width="600" height="314" src="//www.youtube.com/embed/UrBhw377elc" frameborder="0" allowfullscreen></iframe>
-				</div>
-			</div>
 		<?php
 			$args = array ('category_name' => 'post', 'orderby' => 'date', 'order' => 'DESC');	
 			$query_feed = new WP_Query( $args );

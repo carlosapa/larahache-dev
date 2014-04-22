@@ -183,28 +183,31 @@ ul#social-menu {
 }
 
 /* ==== SLIDER HOME ==== */
+
+
 #slider-home-holder {
 	width: 1080px;
 	margin: 0px auto;
 	overflow: hidden;
-	border: 1px solid red;
 }
 
 ul#slider-home {
 	padding: 0px;
 	margin: 0px;
 	overflow: hidden;
-	width: 300%;
-	margin-left: -2160px;
+	width: 301%;
+	/*margin-left: -2160px;*/
 }
 
-ul#slider-home > li {
+ul#slider-home li {
 	list-style: none;
 	width: 1080px;
 	float: left;
 	overflow: hidden;
-	display: inline-block;
-	padding: 0px;
+	display: block;
+	padding: 12px;
+	border-radius: 3px;
+	background: white;
 }
 
 /* 1er slider */
@@ -300,7 +303,7 @@ ul#slider-home > li {
 
 #slider-video .pull-right-half {
 	float: right;
-	width: 50%;
+	width: 48%;
 	height: 370px;
 	position: relative;
 }
@@ -312,7 +315,7 @@ ul#slider-home > li {
 	float: none;
 }
 .pull-right-half #tiny-gallery {
-	margin: 90px 0 0 0;
+	margin: 67px 0 0 0;
 }
 
 .pull-right-half #feed-title.gallery {
@@ -332,11 +335,15 @@ ul#slider-home > li {
 	overflow: hidden;
 }
 
+.anythingSlider-default .arrow a {
+	opacity: 0;
+}
+
 /* ==== BIO-LARA ==== */
 
 #featured {
 	background: rgb(226, 226, 226);
-	padding: 5px 0px 25px;
+	padding: 45px 0px 65px;
 	margin: -40px 0 0;
 	box-shadow: 0 2px 4px rgba(134, 134, 134, 0.37);
 	border-bottom: 3px solid rgb(255, 255, 255);
@@ -729,7 +736,7 @@ ul#slider-home > li {
 /* ==== PRENSA ==== */
 
 #post-prensa {
-	width: 960px;
+	width: 1080px;
 	margin: 10px auto 40px;
 	background-color: #fefefe;
 	padding: 0px;
@@ -767,18 +774,28 @@ ul#slider-home > li {
 }
 
 #prensa-title {
+	transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+		-webkit-transition: background 250ms ease;
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 1.3em;
 	text-transform: uppercase;
-	background: #DF7474;
+	background: #BDBDBD;
 	display: inline-block;
 	padding: 5px 10px;
 	border-radius: 3px;
-	color: #eee;
+	color: #F8F7F7;
 	max-width: 500px;
 	float: left;
 	line-height: 1.2em;
 	height: 58px;
+}
+
+#prensa-title:hover {
+	transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+		-webkit-transition: background 250ms ease;
+	background: #E78E8E;
 }
 
 #prensa-title-lat {
@@ -787,6 +804,9 @@ ul#slider-home > li {
 }
 
 #prensa-date {
+	transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+		-webkit-transition: background 250ms ease;
 	float: left;
 	margin: 0px 0px 10px 10px;
 	background: #D6D6D6;
@@ -796,6 +816,9 @@ ul#slider-home > li {
 }
 
 #prensa-media {
+	transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+		-webkit-transition: background 250ms ease;
 	float: left;
 	margin: 0px 0px 10px 10px;
 	background: #D6D6D6;
@@ -803,6 +826,14 @@ ul#slider-home > li {
 	padding: 1px 11px;
 	border-radius: 3px;
 	clear: left;
+}
+
+#prensa-date:hover, 
+#prensa-media:hover {
+	transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+		-webkit-transition: background 250ms ease;
+	background: #c2c2c2;	
 }
 
 #prensa-author {
@@ -859,6 +890,9 @@ ul#slider-home > li {
 }
 
 #prensa-readmore a {
+	transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+		-webkit-transition: background 250ms ease;
 	display: inline-block;
 	background: #CFCFCF;
 	padding: 3px 11px;
@@ -870,6 +904,13 @@ ul#slider-home > li {
 	margin: -29px 0 0 0;
 }
 
+#prensa-readmore:hover a {
+	transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+		-webkit-transition: background 250ms ease;
+	background: #E78E8E;	
+}
+ 
 #prensa-subtitle {
 	color: #9E9E9E;
 	font-weight: 600;
@@ -882,6 +923,9 @@ ul#slider-home > li {
 }
 
 .prensa-lee {
+	transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+		-webkit-transition: background 250ms ease;
 	display: inline-block;
 	background: #CFCFCF;
 	padding: 3px 11px;
@@ -893,10 +937,18 @@ ul#slider-home > li {
 	margin: -29px 0 0 0;
 }
 
+.prensa-lee:hover {
+	transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+		-webkit-transition: background 250ms ease;
+	background: #E78E8E;
+}
+
+
 /* ==== GALERÍA ==== */
 
 #post-gallery {
-	width: 960px;
+	width: 1080px;
 	margin: 10px auto 40px;
 	background-color: #fff;
 	padding: 5px;

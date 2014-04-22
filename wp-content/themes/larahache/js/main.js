@@ -5,7 +5,7 @@ window.onload = function () {
 	read_more_prensa_functions(); //read more en functions
 	center_imgs(); //centering images
 	picasa_feed();
-	//init_slider();
+	init_slider();
 	init_agenda();
 
 	init_auto_scroll_functions();//links scroll
@@ -29,7 +29,7 @@ var init_wall = function () {
 	wall.fixSize({
 		block: selector,
 		height: 150, 
-		width: 320
+		width: 220
 	});
 	wall.fitWidth();
 };
@@ -43,13 +43,14 @@ var init_slider = function () {
 
 	slider.anythingSlider({
 		autoPlay: true,
-		buildNavigation: false,
+		buildNavigation: true,
 		buildStartStop: false,
 		expand: true,
 		//resizeContents: true,
 		buildArrows : true,
 		hashTags: false,
 		infiniteSlides: true,
+		delay: 6000
 	});
 
 	var timer = window.setTimeout(function() {
