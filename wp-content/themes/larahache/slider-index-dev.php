@@ -83,11 +83,4 @@
 
 		</ul>
 	</div>
-	<div id="labels">
-<<<<<<< HEAD
-		<div>
-=======
-
->>>>>>> 1.0
-	</div>
 </div>
