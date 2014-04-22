@@ -46,7 +46,7 @@ var init_slider = function () {
 		buildNavigation: true,
 		buildStartStop: false,
 		expand: true,
-		//resizeContents: true,
+		/*resizeContents: false,*/
 		buildArrows : true,
 		hashTags: false,
 		infiniteSlides: true,

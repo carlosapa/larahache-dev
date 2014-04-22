@@ -5,7 +5,7 @@
 		<ul id="slider-home">
 
 			<li>
-				<div id="slider-presentaciones">
+				<div id="slider-presentaciones" style="height:360px;">
 					<div class="pull-left-wide">
 						<img src="<?php bloginfo('template_directory');?>/img/lara.jpg" alt="bio-img" title="lara-img" height="250"/>
 						<div id="caption">
@@ -31,7 +31,7 @@
 			</li>
 			
 			<li>
-				<div id="slider-video">
+				<div id="slider-video" style="height:360px;">
 					<div class="pull-left-half">
 						<div id="video-cont">
 							<iframe width="530" height="370" src="//www.youtube.com/embed/UrBhw377elc" frameborder="0" allowfullscreen></iframe>
@@ -67,7 +67,7 @@
 			</li>
 
 			<li>
-				<div id="slider-novedades">
+				<div id="slider-novedades" style="height:360px;">
 					<div class="pull-left-thin">
 						<div id="feed-title" class="acto">Próximo acto</div>
 						<div id="imagen-acto">
