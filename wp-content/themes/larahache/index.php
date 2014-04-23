@@ -13,6 +13,7 @@
 	require_once('slider-index-dev.php'); 
 ?>
 
+
 <div id="home_wrapper">
 	<div id="home_main">
 		<div class="title_holder">
