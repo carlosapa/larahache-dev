@@ -984,6 +984,56 @@ ul#slider-home li {
 	width: 100%;
 }
 
+/* ==== SINGLE ==== */
+
+#single-feed {
+	width: 960px;
+	margin: 10px auto 180px;
+	background-color: #fefefe;
+	padding: 0px;
+	border: 5px solid #fff;
+	border-radius: 3px;
+}
+
+div.title_holder {
+	width: 960px;
+	margin: 0px auto;
+	clear: both;
+}
+
+#single-content {
+	font-size: 1.01em;
+	color: #696969;
+	border-top: 1px solid #E9C4C4;
+	margin: 20px 21px 40px 0;
+	min-height: 83px;
+}
+
+#single-header {
+	overflow: hidden;
+	display: inline-block;
+}
+
+#single-content {
+	border-top: none;
+	margin-top: 0px;
+}
+
+#single-content a {
+	text-decoration: none;
+	background: #F1D9D9;
+	display: inline-block;
+	padding: 0 4px;
+	color: #333;
+	border-radius: 3px;
+}
+
+
+
+#single-info {
+
+}
+
 /* ==== FOOTER ==== */
 
 footer {
