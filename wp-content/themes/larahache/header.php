@@ -30,23 +30,25 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
 
-    <?php 
-    function link_process ($str) {
-        if (is_page('74') || is_page('83') || is_page('194')) {
-            echo '<a href="' . get_home_url() . '">' . $str . '</a>';
-        } else {
-            echo $str;
-        }
-    } 
-    ?>
+<?php 
+function link_process ($str) {
+    if (is_page('74') || is_page('83') || is_page('194') || is_single()) {
+        echo '<a href="' . get_home_url() . '">' . $str . '</a>';
+    } else {
+        echo $str;
+    }
+} 
+?>
 
     <div id="header">
         <div id="head-line"></div>
-        <div id="header-img">    </div> 
-        <div id="header-name">
-            <span class="name">Lara <br/>Hernández García</span>
-            <span class="sub-name">Candidata al Parlamento Europeo por IU</span>
-        </div> 
+        <a style="text-decoration:none;" href="<?php echo home_url() ?>">
+            <div id="header-img"></div> 
+            <div id="header-name">
+                <span class="name">Lara <br/>Hernández García</span>
+                <span class="sub-name">Candidata al Parlamento Europeo por IU</span>
+            </div> 
+        </a>
         <div id="header-menu"> 
             <div id="header-menu-block"> 
                 <ul id="menu">

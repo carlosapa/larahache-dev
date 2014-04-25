@@ -103,7 +103,7 @@ h2.title {
 	background: #333;
 	height: 3px;
 	position: fixed;
-	z-index: 99;
+	z-index: 1000;
 }
 
 #header-img {
@@ -178,7 +178,7 @@ ul#social-menu {
 #header-menu.menu-offset {
 	position: fixed;
 	top: 3px;
-	z-index: 99;
+	z-index: 1000;
 	box-shadow: 0 2px 3px rgba(121, 121, 121, 0.42);
 }
 
@@ -238,7 +238,7 @@ ul#slider-home li {
 }
 
 .img-block {
-	overflow: auto;
+	overflow: hidden;
 	height: 355px;
 }
 
@@ -428,7 +428,7 @@ ul#slider-home li {
 	margin: 10px 0 0 0;
 	height: 87%;
 	display: inline-block;
-	overflow: auto;
+	overflow: hidden;
 	border-radius: 3px;
 	border: 2px solid #C2C2C2;
 }
@@ -815,6 +815,102 @@ ul#slider-home li {
 	vertical-align: middle;
 }
 
+.social-feed {
+	transition: all 250ms ease;
+		-webkit-transition: all 250ms ease;
+		-moz-transition: all 250ms ease;
+	margin: 0;
+	width: 40px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+.social-btn {
+	transition: all 250ms ease;
+		-webkit-transition: all 250ms ease;
+		-moz-transition: all 250ms ease;
+	width: 40px;
+	float: left;
+	opacity: 1;
+	margin: -40px 0 0 0;
+	cursor: pointer;
+	margin-right: 0px;
+	box-shadow: 0 1px 2px rgba(68, 68, 68, 0.53);
+}
+
+.social-btn:first-child {
+	transition: all 250ms ease;
+		-webkit-transition: all 250ms ease;
+		-moz-transition: all 250ms ease;
+	margin: 0;
+	z-index: 600;
+}
+
+.social-fb {
+	transition: all 250ms ease;
+		-webkit-transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+	background: #9794D1 ;
+	z-index: 500;
+	position: relative;
+}
+
+.social-mail {
+	transition: all 250ms ease;
+		-webkit-transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+	background: #B0B0C9;
+	z-index: 400;
+	position: relative;
+}
+
+.social-twitter {
+	transition: all 250ms ease;
+		-webkit-transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+	background: #A1C4DB;
+	z-index: 300;
+	position: relative;
+}
+
+.social-share {
+	transition: all 250ms ease;
+		-webkit-transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+	background: #C01D1D;
+	z-index: 600;
+	position: relative;
+}
+
+.social-fb:hover {
+	transition: all 250ms ease;
+		-webkit-transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+	background: #524EB6;
+}
+
+.social-mail:hover {
+	transition: all 250ms ease;
+		-webkit-transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+	background: #9797A7;
+}
+
+.social-twitter:hover {
+	transition: all 250ms ease;
+		-webkit-transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+	background: #429FDD;
+}
+
+.social-feed:hover .social-btn {
+	transition: all 250ms ease;
+	-webkit-transition: all 250ms ease;
+	-moz-transition: all 250ms ease;
+	margin: 0;
+}
+
 #feed-header {
 	overflow: hidden;
 	display: block;
@@ -1161,8 +1257,7 @@ ul#slider-home li {
 /* ==== SINGLE ==== */
 
 #single-feed {
-	width: 960px;
-	margin: 10px auto 180px;
+	margin: 3px auto 180px;
 	background-color: #fefefe;
 	padding: 0px;
 	border: 5px solid #fff;
@@ -1170,16 +1265,20 @@ ul#slider-home li {
 }
 
 div.title_holder {
-	width: 960px;
+	width: 1080px;
 	margin: 0px auto;
 	clear: both;
+}
+
+h2.title.single {
+	width: 690px;
 }
 
 #single-content {
 	font-size: 1.01em;
 	color: #696969;
 	border-top: 1px solid #E9C4C4;
-	margin: 20px 21px 40px 0;
+	margin: 20px 3px 40px 0;
 	min-height: 83px;
 }
 
@@ -1201,8 +1300,6 @@ div.title_holder {
 	color: #333;
 	border-radius: 3px;
 }
-
-
 
 #single-info {
 
