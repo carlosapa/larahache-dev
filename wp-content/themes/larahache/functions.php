@@ -12,10 +12,9 @@ function init_setup () {
 	//meter imágenes
 	add_theme_support( 'post-thumbnails' );
 	//tipos de entrada para el blog
-	add_theme_support( 'post-formats', array( 'image', 'video', 'quote', 'status' ) );
+	add_theme_support( 'post-formats', array( 'image', 'video' ) );
 }
 add_action('after_setup_theme', 'init_setup' );
-
 
 /*function add_scripts () {
 	wp_enqueue_script("main-admin-obj", get_template_directory_uri().'/js/main.js');
@@ -31,9 +30,20 @@ function add_admin_scripts( $hook ) {
 add_action( 'admin_enqueue_scripts', 'add_admin_scripts', 10, 1 );
 
 function content_to ($_id) {
-	$text = get_page($_id);
-	$content = apply_filters('the_content', $text->post_content);
-	$content = str_replace(']]>', ']]&gt;', $content);
+	$post = get_post($_id);
+	$link = '<a href="' . $post->guid . '">Seguir leyendo</a>';
+	if (!empty( $post->post_excerpt)) {
+		$text = get_page($_id);
+		$content = apply_filters('the_content', $text->post_excerpt);
+		$content = str_replace(']]>', ']]&gt;', $content);
+		$content .= $link;
+
+	} else {
+		$text = get_page($_id);
+		$content = apply_filters('the_content', $text->post_content);
+		$content = str_replace(']]>', ']]&gt;', $content);
+	}
+	
 	return $content;
 }
 

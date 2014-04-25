@@ -66,9 +66,9 @@
 						</div>
 					</div>
 					<div class="pull-right-half">
-						<div id="feed-block-title" class="video"><?php echo $sliders['slider-2']['meta']['video-nombre'][0]; ?></div>
+						<div id="feed-block-title" class="video pointing-left"><span><?php echo $sliders['slider-2']['meta']['video-nombre'][0]; ?></span></div>
 						<div id="tiny-gallery">
-							<div id="feed-block-title" class="gallery">Otras imágenes</div>
+							<div id="feed-block-title" class="gallery pointing-down">Otras imágenes</div>
 							<div id="tiny-gallery-images">
 								<?php
 									//feed gallery from easy gallery

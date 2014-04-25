@@ -44,7 +44,6 @@
 						?>
 
 						<div id="agenda-block" class="<?php today($agenda_meta['fecha_acto'][0]); ?>" data-day="<?php echo $agenda_meta['fecha_acto'][0]; ?>">
-							<pre><?php //print_r($agenda_meta)?></pre>
 							<div id="agenda-date"><?php format_date_agenda($agenda_meta['fecha_acto'][0]); ?></div>
 							<div id="agenda-time"><?php echo $agenda_meta['lugar_acto'][0]; ?></div>
 							<!--<div id="agenda-place"><?php //echo $agenda_meta['hora_acto'][0]; ?></div>-->
@@ -66,7 +65,8 @@
 		</div>
 		<div id="post-feed">	
 		<?php
-			$args = array ('category_name' => 'post', 'orderby' => 'date', 'order' => 'DESC');	
+			$paged = (get_query_var("page")) ? get_query_var("page") : 1;
+			$args = array ('category_name' => 'post', 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 5, 'paged' => $paged );	
 			$query_feed = new WP_Query( $args );
 			$i = 0;
 			$feed_post = $query_feed->posts;
@@ -104,11 +104,13 @@
 						<div id="feed-info">
 							<div id="feed-header">
 								<div id="feed-title"><?php echo $feed_post[$i]->post_title; ?></div>
-								<div id="feed-date"><?php echo get_the_date('d.m.y'); ?></div>
-								<div id="feed-author"><?php echo get_formated_author($feed_post[$i]->post_author); ?></div>		
+								<div id="feed-title-info">
+									<div id="feed-date"><?php echo get_the_date('d.m.y'); ?></div>
+									<div id="feed-author"><?php echo get_formated_author($feed_post[$i]->post_author); ?></div>	
+								</div>	
 							</div>
 							<div id="feed-content"><?php echo content_to($feed_post[$i]->ID); ?></div>
-							<div id="feed-readmore"><a href="<?php echo get_permalink(get_the_id()); ?>" target="_self">Ver más de este post</a></div>
+							<div class="prensa-lee"><a href="<?php echo get_permalink(get_the_id()); ?>" target="_self">Ver más de este post</a></div>
 						</div>
 					</div><!-- end of feed block -->
 
@@ -116,8 +118,38 @@
 					$i++;
 				}
 			}
+			?>
+				<div id="pagination">
+					<div id="pagination-area">
+
+						<?php 
+							$big = 999999999;
+							$args = array(
+								'base'         => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+								'format'       => '?page=%#%',
+								'total'        => $query_feed->max_num_pages,
+								'current'      => max( 1, get_query_var('page') ),
+								'show_all'     => False,
+								'end_size'     => 1,
+								'mid_size'     => 2,
+								'prev_next'    => True,
+								'prev_text'    => __('« Anteriores'),
+								'next_text'    => __('Siguentes »'),
+								'type'         => 'plain',
+								'add_args'     => False,
+								'add_fragment' => '',
+								'before_page_number' => '',
+								'after_page_number' => ''
+							); 
+							echo paginate_links($args);
+						?>
+					</div>
+				</div>
+		
+		<?php
 			wp_reset_postdata();
 		?>
+
 		</div><!-- end of feed -->
 	</div><!-- end of main -->
 	<div id="home-sidebar">
