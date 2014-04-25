@@ -320,7 +320,7 @@ ul#slider-home li {
 	float: none;
 }
 .pull-right-half #tiny-gallery {
-	margin: 67px 0 0 0;
+	margin: 25px 0 0 0;
 }
 
 .pull-right-half #feed-title.gallery {
@@ -331,17 +331,103 @@ ul#slider-home li {
 
 .pull-right-half #tiny-gallery-images {
 	margin: 10px 0 0 0;
+	overflow: auto;
+	width: 490px;
 }
 
-#tiny-gallery-images div {
+#tiny-image {
+	transition: opacity 250ms ease;
+		-webkit-transition: opacity 250ms ease;
+		-moz-transition: opacity 250ms ease;
 	display: block;
 	float: left;
 	margin: 0 3px 3px 0;
 	overflow: hidden;
+	cursor: pointer;
+	opacity: 0.7;
+}
+
+#tiny-image:hover {
+	transition: opacity 250ms ease;
+		-webkit-transition: opacity 250ms ease;
+		-moz-transition: opacity 250ms ease;	
+	opacity: 0.95;
+}
+
+#tiny-image:first-child {
+	width: 123px;
+	overflow: hidden;
+	height: 80px;
+}
+
+#tiny-image:first-child > img {
+	width: 100%;
+	height: auto;
+}
+
+#tiny-image.ver-mas {
+	transition: opacity 250ms ease;
+		-webkit-transition: opacity 250ms ease;
+		-moz-transition: opacity 250ms ease;
+	width: 147px;
+	height: 80px;
+	background: #C01D1D;
+	opacity: 0.4;
+	padding: 26px;
+	text-align: center;
+}
+
+#tiny-image.ver-mas:hover {
+	transition: opacity 250ms ease;
+		-webkit-transition: opacity 250ms ease;
+		-moz-transition: opacity 250ms ease;
+	opacity: 0.7;
+}
+
+#tiny-image.ver-mas span {
+	color: #eee;
+	text-transform: uppercase;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 1.3em;
 }
 
 .anythingSlider-default .arrow a {
 	opacity: 0;
+}
+
+/* 3er slider */
+
+.pull-left-thin {
+	float: left;
+	margin: 10px 10px;
+	width: 30%;
+	overflow: auto;
+	height: 95%;
+}
+.pull-left-thin #imagen-acto {
+	width: 100%;
+	margin: 10px 0 0 0;
+	height: 87%;
+	display: inline-block;
+	overflow: auto;
+	border-radius: 3px;
+	border: 2px solid #C2C2C2;
+}
+
+.pull-left-thin #imagen-acto img {
+	width: 100%;
+	height: auto;
+}
+
+.pull-right-wide {
+	float: right;
+	width: 68%;
+}
+
+#feed-info.slider {
+	margin: 60px 0 0 7px;
+	padding: 15px 0 0 30px;
+	display: inline-block;
 }
 
 /* ==== BIO-LARA ==== */
