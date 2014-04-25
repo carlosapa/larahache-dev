@@ -84,6 +84,7 @@
 		</ul>
 	</div>
 </div>
+
 <script type="text/javascript">
 	var slider = $('#slider-home');
 	slider.anythingSlider({
