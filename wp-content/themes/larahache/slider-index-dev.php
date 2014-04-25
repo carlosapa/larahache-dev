@@ -28,11 +28,14 @@
 			<li>
 				<div id="slider-presentaciones" style="height:360px;">
 					<div class="pull-left-wide">
-						<?php 
-							//img load
-							$img_attr = wp_get_attachment_image_src($sliders['slider-1']['meta']['gallery'][0], 'full', 0);
-						?>
-						<img src="<?php echo $img_attr[0];?>" alt="bio-img" title="lara-img" height="250"/>
+						
+						<div class="img-block">
+							<?php 
+								//img load
+								$img_attr = wp_get_attachment_image_src($sliders['slider-1']['meta']['gallery'][0], 'full', 0);
+							?>
+							<img src="<?php echo $img_attr[0];?>" alt="bio-img" title="lara-img"/>
+						</div>	
 						<div id="caption">
 							<span id="bio-name" class="bio-data"><?php echo $sliders['slider-1']['meta']['nombre-lara'][0]; ?></span>
 							<span id="bio-name" class="bio-data"><?php echo $sliders['slider-1']['meta']['subnombre-lara'][0]; ?></span>
@@ -59,20 +62,20 @@
 				<div id="slider-video" style="height:360px;">
 					<div class="pull-left-half">
 						<div id="video-cont">
-							<iframe width="530" height="370" src="<?php echo $sliders['slider-2']['meta']['video-link'][0]; ?>" frameborder="0" allowfullscreen></iframe>
+							<iframe width="530" height="355" src="<?php echo $sliders['slider-2']['meta']['video-link'][0]; ?>" frameborder="0" allowfullscreen></iframe>
 						</div>
 					</div>
 					<div class="pull-right-half">
-						<div id="feed-title" class="video"><?php echo $sliders['slider-2']['meta']['video-nombre'][0]; ?></div>
+						<div id="feed-block-title" class="video"><?php echo $sliders['slider-2']['meta']['video-nombre'][0]; ?></div>
 						<div id="tiny-gallery">
-							<div id="feed-title" class="gallery">Otras imágenes</div>
+							<div id="feed-block-title" class="gallery">Otras imágenes</div>
 							<div id="tiny-gallery-images">
 								<?php
 									//feed gallery from easy gallery
 									$gallery_slider_2  = $sliders['slider-2']['meta']['_easy_image_gallery'][0];
 									$gallery_image_ids = explode(",", $gallery_slider_2);
 									for ($i = 0; $i < count($gallery_image_ids); $i++) {
-										$image_data[$i] = wp_get_attachment_image_src($gallery_image_ids[$i], 'full', 0);
+										$image_data[$i] = wp_get_attachment_image_src($gallery_image_ids[$i], 'medium', 0);
 										$url[$i]        = $image_data[$i][0]; 
 										?>
 
@@ -100,7 +103,7 @@
 			<li>
 				<div id="slider-novedades" style="height:360px;">
 					<div class="pull-left-thin">
-						<div id="feed-title" class="acto">Próximo acto</div>
+						<div id="feed-block-title" class="acto">Próximo acto</div>
 						<div id="imagen-acto">
 							<?php 
 								//tomo objeto post y deserializo el id del post
@@ -122,13 +125,15 @@
 						<div id="feed-info" class="slider">
 							<div id="feed-header">
 								<div id="feed-title"><?php echo get_the_title($post->ID); ?></div>
-								<div id="feed-date">
-									<?php 
-										//es la única manera de tomar la fecha formateada de una fecha
-										echo mysql2date('d.m.y', $post->post_date); 
-									?>
-								</div>
-								<div id="feed-author"><?php echo get_formated_author($post->post_author); ?></div>		
+								<div id="feed-title-info">
+									<div id="feed-date">
+										<?php 
+											//es la única manera de tomar la fecha formateada de una fecha
+											echo mysql2date('d.m.y', $post->post_date); 
+										?>
+									</div>
+									<div id="feed-author"><?php echo get_formated_author($post->post_author); ?></div>	
+								</div>	
 							</div>
 							<div id="feed-content"><?php echo content_to($post->ID); ?></div>
 							<div id="feed-readmore"><a href="<?php echo get_permalink($post->ID); ?>" target="_self">Ver más de este post</a></div>
