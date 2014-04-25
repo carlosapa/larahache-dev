@@ -13,6 +13,7 @@
 	require_once('slider-index-dev.php'); 
 ?>
 
+
 <div id="home_wrapper">
 	<div id="home_main">
 		<div class="title_holder">
@@ -103,11 +104,11 @@
 						<div id="feed-info">
 							<div id="feed-header">
 								<div id="feed-title"><?php echo $feed_post[$i]->post_title; ?></div>
-								<div id="feed-date"><?php echo get_the_formated_date($feed_post[$i]->ID); ?></div>
+								<div id="feed-date"><?php echo get_the_date('d.m.y'); ?></div>
 								<div id="feed-author"><?php echo get_formated_author($feed_post[$i]->post_author); ?></div>		
 							</div>
 							<div id="feed-content"><?php echo content_to($feed_post[$i]->ID); ?></div>
-							<!--<div id="feed-readmore"><a href="<?php //echo $feed_post[$i]->guid; ?>" target="_self">Ver más de este post</a></div>-->
+							<div id="feed-readmore"><a href="<?php echo get_permalink(get_the_id()); ?>" target="_self">Ver más de este post</a></div>
 						</div>
 					</div><!-- end of feed block -->
 

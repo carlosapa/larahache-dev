@@ -27,17 +27,11 @@
 
         </footer>
 
-
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="<?php bloginfo(' + template_directory + ' );?>/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
-        
-        <script src="<?php bloginfo('template_directory' );?>/js/vendor/jquery.easing.1.2.js"></script>
         <script src="<?php bloginfo('template_directory' );?>/js/vendor/jquery.scrollTo.min.js"></script>
         <script src="<?php bloginfo('template_directory' );?>/js/vendor/freewall.js"></script>
         <script src="<?php bloginfo('template_directory' );?>/js/vendor/lightbox.min.js"></script>
-        <script src="<?php bloginfo('template_directory' );?>/js/vendor/jquery.anythingslider.min.js"></script>
-        <script src="<?php bloginfo('template_directory' );?>/js/vendor/jquery.anythingslider.video.min.js"></script>
-        <script src="<?php bloginfo('template_directory' );?>/js/vendor/jquery.anythingslider.fx.min.js"></script>
+
+
         <script src="<?php bloginfo('template_directory' );?>/js/main.js"></script>
 
         <script>

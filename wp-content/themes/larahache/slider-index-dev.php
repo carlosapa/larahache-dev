@@ -83,7 +83,25 @@
 
 		</ul>
 	</div>
-	<div id="labels">
-
-	</div>
 </div>
+
+<script type="text/javascript">
+	var slider = $('#slider-home');
+	slider.anythingSlider({
+		autoPlay: true,
+		buildNavigation: true,
+		buildStartStop: false,
+		expand: true,
+		/*resizeContents: false,*/
+		buildArrows : true,
+		hashTags: false,
+		infiniteSlides: false,
+		delay: 6000
+	});
+
+	slider.on('slide_begin', function(e, slider) {
+		if (slider.currentPage == 1) {
+			open_intro_text('#slider-home-holder', 381);
+		}
+	});
+</script>

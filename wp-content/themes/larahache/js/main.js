@@ -1,64 +1,17 @@
 window.onload = function () {
-	init_wall(); //iniciar muro
 	init_scroll_functions(); //scrolleo
 	read_more_functions(); //read more en home
 	read_more_prensa_functions(); //read more en functions
 	center_imgs(); //centering images
 	picasa_feed();
-	init_slider();
 	init_agenda();
-
 	init_auto_scroll_functions();//links scroll
-
 	init_admin_functions(); //esconder categorías...
 	console.log('main.js loaded and ready');
 };
 
 /* ====================== */
 
-var init_wall = function () {
-	var wall = new freewall('#post-gallery-holder');
-	var selector = $('.js-wall-item');
-	
-	wall.reset({
-		animate: true,
-		gutterY: 10,
-	  	gutterX: 'auto'
-	});
-
-	wall.fixSize({
-		block: selector,
-		height: 150, 
-		width: 220
-	});
-	wall.fitWidth();
-};
-
-/* ====================== */
-
-var init_slider = function () {
-	var slider = $('#slider-home');
-
-	//slider.css('opacity', 0);
-
-	slider.anythingSlider({
-		autoPlay: true,
-		buildNavigation: true,
-		buildStartStop: false,
-		expand: true,
-		/*resizeContents: false,*/
-		buildArrows : true,
-		hashTags: false,
-		infiniteSlides: false,
-		delay: 6000
-	});
-
-	var timer = window.setTimeout(function() {
-		slider.animate({
-			'opacity': 1
-		}, 250);
-	}, 500);
-};
 
 /* ====================== */
 
@@ -122,8 +75,6 @@ var read_more_prensa_functions = function () {
 
 		}, false);
 	}
-
-
 };
 
 /* ====================== */
@@ -141,10 +92,12 @@ var read_more_functions = function () {
 				ev.target.classList.toggle('open')
 				
 				if(!ev.target.classList.contains('open')) {
+					open_intro_text('#slider-home-holder', 800);
 					bio_text.style.height = '470px';
 					ev.target.style.bottom = '0px';
 					ev.target.innerHTML = 'Cerrar texto';
 				} else {
+					open_intro_text('#slider-home-holder', 370);
 					bio_text.style.height = '90px';
 					ev.target.style.bottom = '120px';
 					ev.target.innerHTML = 'Volver a abrirlo';
@@ -153,7 +106,12 @@ var read_more_functions = function () {
 
 		}, false);
 	}
-}
+};
+
+var open_intro_text = function (selector, px) {
+	var holder = document.querySelector(selector);
+	holder.style.height = px + 'px';
+};
 
 var dw_getScrollOffsets = function () { //funcion sacada de http://www.dyn-web.com/javascript/scroll-distance/
     var doc = document, w = window;
