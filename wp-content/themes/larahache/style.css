@@ -481,6 +481,7 @@ ul#slider-home li {
 #home-sidebar {
 	overflow: hidden;
 	float: right;
+	width: 28%;
 }
 
 #twitter-feed {

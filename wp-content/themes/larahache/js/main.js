@@ -4,43 +4,13 @@ window.onload = function () {
 	read_more_prensa_functions(); //read more en functions
 	center_imgs(); //centering images
 	picasa_feed();
-	init_slider();
 	init_agenda();
-
 	init_auto_scroll_functions();//links scroll
-
 	init_admin_functions(); //esconder categorías...
 	console.log('main.js loaded and ready');
 };
 
 /* ====================== */
-
-/* ====================== */
-
-var init_slider = function () {
-	var slider = $('#slider-home');
-
-	//slider.css('opacity', 0);
-
-	slider.anythingSlider({
-		autoPlay: true,
-		buildNavigation: true,
-		buildStartStop: false,
-		expand: true,
-		/*resizeContents: false,*/
-		buildArrows : true,
-		hashTags: false,
-		infiniteSlides: false,
-		delay: 6000
-	});
-
-	slider.on('slide_begin', function(e, slider) {
-		if (slider.currentPage == 1) {
-			open_intro_text('#slider-home-holder', 381);
-		}
-	});
-
-};
 
 
 /* ====================== */

@@ -6,6 +6,10 @@
 */
 ?>
 <?php get_header(); ?>
+<?php 
+	$page = the_post();
+?>
+
 
 <div id="home_wrapper">
 	<div class="title_holder">
@@ -15,31 +19,16 @@
 		<h2 class="gallery_name">Asamblea programática</h2>
 		<div id="post-gallery-holder">	
 		<?php
-		  $CP =  get_the_id();
+			$galleries = get_post_galleries_images($page->ID, 'large');
+			?><pre><?php print_r($galleries)?></pre>
+		<?php
+
 		?>
-		<?php query_posts('p=' . $CP . ''); ?>
-		<?php if ( have_posts() ) : while ( have_posts() ) : the_post();    
-
-		 $args = array(
-		   'post_type' => 'attachment',
-		   'numberposts' => -1,
-		   'orderby'       => 'name',
-		   'post_status' => null,
-		   'post_parent' => $CP
-		   );
-
-		  $attachments = get_posts( $args );
-		     if ( $attachments ) {
-		        foreach ( $attachments as $attachment ) {
-					echo '<li><p>';
-		           	echo wp_get_attachment_image( $attachment->ID, array(746,500) );
-					echo '</p></li>';
-		          }
-		     }
-
-		 endwhile; endif; ?>
 		</div>	
 	</div><!-- end of feed -->
+	<script type="text/javascript">
+
+	</script>
 </div>
 
 <?php get_footer(); ?>
