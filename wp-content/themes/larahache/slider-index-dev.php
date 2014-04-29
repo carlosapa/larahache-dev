@@ -87,7 +87,7 @@
 									}							
 								?>
 
-								<a href=""><div id="tiny-image" class="ver-mas">
+								<a href="?page_id=83"><div id="tiny-image" class="ver-mas">
 									<span>Ver más</span>
 								</div></a>
 

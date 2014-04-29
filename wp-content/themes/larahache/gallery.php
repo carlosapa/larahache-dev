@@ -5,38 +5,54 @@
 *
 */
 ?>
-<?php get_header(); ?>
 <?php 
-	$page = the_post();
-?>
 
+get_header(); 
+$gallery = get_gallery_from_post($page->ID);
+
+?>
 
 <div id="home_wrapper">
 	<div class="title_holder">
 		<h2 class="title js-scroll-noticias">Galería de imágenes</h2 class="title">
 	</div>
 	<div id="post-gallery">	
-		<h2 class="gallery_name">Asamblea programática</h2>
 		<div id="post-gallery-holder">	
 		<?php
-			$galleries = get_post_galleries_images($page->ID, 'large');
-			?><pre><?php print_r($galleries)?></pre>
-		<?php
 
+			for ($i = 0; $i < count($gallery); $i++) {
+				if (gettype($gallery[$i]) !== 'array') {
+					//sacamos un div con el nombre de la galería
+					?>
+						<div class="gallery-images gallery-name">
+							<span><?php echo $gallery[$i]; ?></span>
+						</div>
+					<?php
+				} else {
+					//rehacemos un array con las imágenes
+					for ($j = 0; $j < count($gallery[$i]); $j++) {
+						$img_url_tiny = wp_get_attachment_image_src( $gallery[$i][$j], 'medium', false);
+						$img_url_big = wp_get_attachment_image_src( $gallery[$i][$j], 'large', false);
+						//pintamos la imagen
+						?>
+
+						<div class="gallery-images">
+							<a id="single_image" class="zoom-in" href="<?php echo $img_url_big[0]; ?>">
+								<img src="<?php echo $img_url_tiny[0]; ?>" alt="gallery-image" />
+							</a>
+						</div>
+
+						<?php
+					}
+				}
+			}
+		
 		?>
+		<!--<pre><?php print_r($gallery)?></pre>-->
 		</div>	
-do. url parse -> button
-<a href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fparse.com" target="_blank">
- Share on Facebook
-</a>
 
-<a href="http://twitter.com/home?status=go+to+this+page+http://www.example.com/%23/page10" target="_blank">
-<br/>
-Parsear esto -> Share on Twitter
-</a>
 	</div><!-- end of feed -->
 	<script type="text/javascript">
-
 	</script>
 </div>
 

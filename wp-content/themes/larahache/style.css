@@ -4,7 +4,7 @@ Theme URI: --
 Author: Carlos Aparicio - Berlinerds
 Author URI: http://www.berlinerds.com
 Description: Events based site to promote the political activity of Lara in the campaign to the european parlament
-Version: 0.1
+Version: 2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: larahache, iu, ammmmor, spain
@@ -638,7 +638,44 @@ ul#slider-home li {
 	padding: 4px;
 }
 
+.readmore {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	background: rgba(255, 255, 255, 0.78);
+	padding: 8% 24%;
+	z-index: 2000;
+	display: none;
+}
 
+.readmore-int {
+	background: fff;
+	padding: 30px;
+	border: 1px solid #eee;
+	border-radius: 3px;
+	box-shadow: 0 2px 2px #aaa;
+}
+
+h2.title-link-out {
+	font-size: 1em;
+	background: #CFCFCF;
+	display: inline-block;
+	margin: 30px 13px 0px;
+	padding: 2px 11px;
+	border-radius: 3px;
+	color: #727272;
+}
+
+h2.title-link-out a,
+h2.title-link-out a:active, 
+h2.title-link-out a:hover, 
+h2.title-link-out a:focus, 
+h2.title-link-out a:visited {
+	color: #727272;
+	text-decoration: none;
+}
 
 /* ==== AGENDA ==== */
 
@@ -1009,6 +1046,241 @@ ul#slider-home li {
 	color: #949494;	
 }
 
+/* ==== NOVEDADES ==== */
+
+#post-news {
+	width: 100%;
+	overflow: hidden;
+	padding: 10px 0 0 0;
+}
+
+#news-block {
+	overflow: hidden;
+	width: 245px;
+	float: left;
+	padding: 0 0px;
+	border: 5px solid #fefefe;
+	border-radius: 3px;
+	margin: 0px 5px 15px 5px;
+	background: #fefefe;
+}
+
+#news-block:nth-child(3n) {
+	margin: 0px 0px 15px 5px;
+}
+
+#news-block:nth-child(3n-2) {
+	margin: 0px 5px 15px 0px;
+}
+
+#news-image {
+	display: block;
+	height: 200px;
+	overflow: hidden;
+	position: relative;
+}
+
+#news-image img {
+	width: 100%;
+	display: table-cell; 
+	vertical-align: middle;
+}
+
+.social-news {
+	transition: all 250ms ease;
+		-webkit-transition: all 250ms ease;
+		-moz-transition: all 250ms ease;
+	margin: 0;
+	width: 40px;
+	position: absolute;
+	top: 0px;
+	right: 0px;
+}
+
+.social-btn {
+	transition: all 250ms ease;
+		-webkit-transition: all 250ms ease;
+		-moz-transition: all 250ms ease;
+	width: 40px;
+	float: left;
+	opacity: 1;
+	margin: -40px 0 0 0;
+	cursor: pointer;
+	margin-right: 0px;
+	box-shadow: 0 1px 2px rgba(68, 68, 68, 0.53);
+}
+
+.social-btn:first-child {
+	transition: all 250ms ease;
+		-webkit-transition: all 250ms ease;
+		-moz-transition: all 250ms ease;
+	margin: 0;
+	z-index: 600;
+}
+
+.social-fb {
+	transition: all 250ms ease;
+		-webkit-transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+	background: #9794D1 ;
+	z-index: 500;
+	position: relative;
+}
+
+.social-mail {
+	transition: all 250ms ease;
+		-webkit-transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+	background: #B0B0C9;
+	z-index: 400;
+	position: relative;
+}
+
+.social-twitter {
+	transition: all 250ms ease;
+		-webkit-transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+	background: #A1C4DB;
+	z-index: 300;
+	position: relative;
+}
+
+.social-share {
+	transition: all 250ms ease;
+		-webkit-transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+	background: #C01D1D;
+	z-index: 600;
+	position: relative;
+}
+
+.social-fb:hover {
+	transition: all 250ms ease;
+		-webkit-transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+	background: #524EB6;
+}
+
+.social-mail:hover {
+	transition: all 250ms ease;
+		-webkit-transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+	background: #9797A7;
+}
+
+.social-twitter:hover {
+	transition: all 250ms ease;
+		-webkit-transition: background 250ms ease;
+		-moz-transition: background 250ms ease;
+	background: #429FDD;
+}
+
+.social-feed:hover .social-btn {
+	transition: all 250ms ease;
+	-webkit-transition: all 250ms ease;
+	-moz-transition: all 250ms ease;
+	margin: 0;
+}
+
+#news-header {
+	overflow: hidden;
+	display: block;
+	width: 100%;
+	min-height: 105px;
+}
+
+#news-title-info {
+	float: left;
+	width: 100%;
+}
+
+#news-title {
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 1.1em;
+	text-transform: uppercase;
+	display: block;
+	color: #B1B1B1;
+	line-height: 1.1em;
+	margin: 10px 0 0 0;
+}
+
+#news-date {
+	margin: 5px 0px 0px 0px;
+	background: #C4C4C4;
+	color: #fff;
+	padding: 1px 11px;
+	border-radius: 3px;
+	float: left;
+	display: inline-block;
+}
+
+#news-author {
+	margin: 5px 0px 0px 6px;
+	background: #C4C4C4;
+	color: #fff;
+	padding: 1px 11px;
+	border-radius: 3px;
+	display: inline-block;
+}
+
+#news-content {
+	font-size: 0.95em;
+	color: #696969;
+	border-top: 1px solid #E9C4C4;
+	margin: 20px 0px 40px 0;
+	min-height: 140px;
+}
+
+#news-content a {
+	text-decoration: none;
+	background: #F1D9D9;
+	display: inline-block;
+	padding: 0 4px;
+	color: #333;
+	border-radius: 3px;
+}
+
+#news-info {
+	display: block;
+}
+
+#news-readmore a {
+	display: inline-block;
+	background: #DF7474;
+	padding: 3px 11px;
+	color: #eee;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-family: 'Roboto Condensed', sans-serif;
+	border-radius: 4px;
+	margin: -29px 0 0 0;
+}
+
+#pagination-area {
+	margin: 20px auto 15px;
+	max-width: 280px;
+	min-width: 140px;
+	background: #eee;
+	padding: 9px 20px;
+	text-align: center;
+	border-radius: 3px;
+}
+
+#pagination-area .page-numbers {
+	margin: 0px -3px;
+	color: #949494;
+	text-decoration: none;
+	font-weight: 600;
+	padding: 4px 5px;
+}
+
+#pagination-area .page-numbers.current {
+	margin: 1px 4px;
+	color: #424040;
+	border-top: 1px solid #C01D1D;
+	color: #949494;	
+}
+
 /* ==== PRENSA ==== */
 
 #post-prensa {
@@ -1242,6 +1514,8 @@ ul#slider-home li {
 #post-gallery-holder {
 	width: 100%;
 	background-color: #fefefe;
+	overflow: hidden;
+	margin: 30px 24px 30px;
 }
 
 .js-wall-item {
@@ -1254,10 +1528,69 @@ ul#slider-home li {
 	width: 100%;
 }
 
+.gallery-images.gallery-name {
+	transition: opacity 250ms ease;
+		-moz-transition: opacity 250ms ease;
+		-webkit-transition: opacity 250ms ease;
+	background: #C01D1D;
+	color: #eee;
+	padding: 30px;
+	font-family: 'Roboto Condensed';
+	text-transform: uppercase;
+	font-size: 1.4em;
+	line-height: 1.2;
+	opacity: 0.3;
+}
+
+.gallery-images.gallery-name:hover {
+	transition: opacity 250ms ease;
+		-moz-transition: opacity 250ms ease;
+		-webkit-transition: opacity 250ms ease;	
+	opacity: 1;
+}
+
+.gallery-images {
+	width: 200px;
+	height: 130px;
+	overflow: hidden;
+	float: left;
+	margin: 2px;
+	position: relative;
+	cursor: pointer;
+}
+
+.gallery-images:not(.gallery-name)::after {
+	transition: top 250ms ease;
+		-moz-transition: top 250ms ease;
+		-webkit-transition: top 250ms ease;	
+	position: absolute;
+	content: " ";
+	width: 100%;
+	height: 100%;
+	top: 130px;
+	left: 0px;
+	background: url('img/zoom-in.png') no-repeat center center ,#333;
+	opacity: 0.4;
+}
+
+.gallery-images:hover::after {
+	transition: top 250ms ease;
+		-moz-transition: top 250ms ease;
+		-webkit-transition: top 250ms ease;	
+	top: 0px;
+}
+
+.gallery-images img {
+	width: 100%;
+	height: auto;
+}
+
+
+
 /* ==== SINGLE ==== */
 
 #single-feed {
-	margin: 3px auto 180px;
+	margin: 3px auto 3px;
 	background-color: #fefefe;
 	padding: 0px;
 	border: 5px solid #fff;
@@ -1268,11 +1601,15 @@ div.title_holder {
 	width: 1080px;
 	margin: 0px auto;
 	clear: both;
+	overflow: hidden;
 }
 
 h2.title.single {
-	width: 690px;
+	width: 657px;
+	min-height: 49px;
+	overflow: hidden;
 }
+
 
 #single-content {
 	font-size: 1.01em;
@@ -1302,7 +1639,28 @@ h2.title.single {
 }
 
 #single-info {
+	margin: 0 0 0 187px;
+	padding: 15px 0 0 30px;
+	display: block;
+	min-height: 245px;
+}
 
+#single-image {
+	float: left;
+	display: block;
+	width: 200px;
+	height: 282px;
+	background: #F5F5F5;
+	border: 2px solid #F1EEEE;
+	border-radius: 3px;
+	overflow: hidden;
+	margin: 13px 0 0 0;
+	position: relative;
+}
+
+#single-image img {
+	width: 100%;
+	height: auto;
 }
 
 /* ==== FOOTER ==== */
@@ -1312,6 +1670,7 @@ footer {
 	height: 207px;
 	background: #DBDBDB;
 	overflow: hidden;
+	margin: 40px 0 0 0;
 }
 
 #red-line {

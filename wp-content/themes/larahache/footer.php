@@ -28,10 +28,7 @@
         </footer>
 
         <script src="<?php bloginfo('template_directory' );?>/js/vendor/jquery.scrollTo.min.js"></script>
-        <script src="<?php bloginfo('template_directory' );?>/js/vendor/freewall.js"></script>
-        <script src="<?php bloginfo('template_directory' );?>/js/vendor/lightbox.min.js"></script>
-
-
+        <script src="<?php bloginfo('template_directory' );?>/js/vendor/jquery.fancybox.pack.js"></script>
         <script src="<?php bloginfo('template_directory' );?>/js/main.js"></script>
 
         <script>

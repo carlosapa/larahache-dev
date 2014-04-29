@@ -1,75 +1,23 @@
 <?php
 /*
 *
-* Template Name: Home
+* Template Name: Novedades
 *
 */
 ?>
 
 <?php get_header(); ?>
 
-<?php 
-	// Init slider home:
-	require_once('slider-index-dev.php'); 
-?>
-
-
 <div id="home_wrapper">
 	<div id="home_main">
-		<div class="title_holder">
-			<h2 class="title js-scroll-agenda">Agenda</h2 class="title">
-		</div>
-
-		<div id="agenda-widget">
-			<div id="agenda-holder">
-			<?php
-
-				$args = array (
-					'category_name' => 'calendar', 
-					'post_per_page' => '-1', 
-					'order'         => 'ASC', 
-					'meta_key'		=> 'fecha_acto',
-					'orderby' 		=> 'meta_value',
-					'nopaging'      => 'true'
-				);
-
-				$query_agenda = new WP_Query( $args );
-				$i = 0;
-
-				$agenda_post = $query_agenda->posts;
-				if ($query_agenda->have_posts()) {
-					while ($query_agenda->have_posts()) {
-						$query_agenda->the_post();
-						$agenda_meta = get_post_meta($agenda_post[$i]->ID);
-						?>
-
-						<div id="agenda-block" class="<?php today($agenda_meta['fecha_acto'][0]); ?>" data-day="<?php echo $agenda_meta['fecha_acto'][0]; ?>">
-							<div id="agenda-date"><?php format_date_agenda($agenda_meta['fecha_acto'][0]); ?></div>
-							<div id="agenda-time"><?php echo $agenda_meta['lugar_acto'][0]; ?></div>
-							<!--<div id="agenda-place"><?php //echo $agenda_meta['hora_acto'][0]; ?></div>-->
-						</div>
-
-						<?php 
-						$i++;
-					}
-				}
-				wp_reset_postdata();
-			?>
-			<!--<div id="agenda-block-marker">hola</div>-->
-			</div>
-		</div><!-- end of agenda -->
-
-
+		
 		<div class="title_holder">
 			<h2 class="title js-scroll-noticias">Novedades</h2>
-			<h2 class="title-link-out">
-				<a href="?page_id=376">Ver en una página aparte</a>
-			</h2>
 		</div>
-		<div id="post-feed">	
+		<div id="post-news">	
 		<?php
 			$paged = (get_query_var("page")) ? get_query_var("page") : 1;
-			$args = array ('category_name' => 'post', 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 5, 'paged' => $paged );	
+			$args = array ('category_name' => 'post', 'orderby' => 'date', 'order' => 'DESC', 'posts_per_page' => 10, 'paged' => $paged );	
 			$query_feed = new WP_Query( $args );
 			$i = 0;
 			$feed_post = $query_feed->posts;
@@ -79,9 +27,9 @@
 					$feed_meta = get_post_meta($feed_post[$i]->ID);
 					?>
 
-					<div id="feed-block" class="">
+					<div id="news-block" class="">
 
-						<div id="feed-image">
+						<div id="news-image">
 							<?php
 								if (has_post_thumbnail( $feed_post[$i]->ID )) {
 									$attr = array(
@@ -103,7 +51,7 @@
 									<img src="<?php echo $src[0];?>" />
 								<?php }
 							?>
-							<div class="social-feed">
+							<div class="social-news">
 									<?php 
 										$encoded_url = urldecode($feed_post[$i]->guid);
 									?>
@@ -127,15 +75,19 @@
 								</div>
 							</div>	
 						</div>
-						<div id="feed-info">
-							<div id="feed-header">
-								<div id="feed-title"><?php echo $feed_post[$i]->post_title; ?></div>
-								<div id="feed-title-info">
-									<div id="feed-date"><?php echo get_the_date('d.m.y'); ?></div>
-									<div id="feed-author"><?php echo get_formated_author($feed_post[$i]->post_author); ?></div>	
+						<div id="news-info">
+							<div id="news-header">
+								<div id="news-title"><?php echo max_words($feed_post[$i]->post_title, 8);?></div>
+								<div id="news-title-info">
+									<div id="news-date"><?php echo get_the_date('d.m.y'); ?></div>
+									<div id="news-author"><?php echo get_formated_author($feed_post[$i]->post_author); ?></div>	
 								</div>	
 							</div>
-							<div id="feed-content"><?php echo content_to($feed_post[$i]->ID); ?></div>
+							<div id="news-content">
+								<?php 
+									echo max_words(content_to($feed_post[$i]->ID), 20); 
+								?>
+							</div>
 							<div class="prensa-lee"><a href="<?php echo get_permalink(get_the_id()); ?>" target="_self">Ver más de este post</a></div>
 						</div>
 					</div><!-- end of feed block -->
@@ -178,19 +130,9 @@
 
 		</div><!-- end of feed -->
 	</div><!-- end of main -->
-	
 	<?php require_once('sidebar-1.php'); ?> <!-- include sidebar -->
 
 </div><!-- end of wrapper -->
-<div class="readmore">
-	<div class="readmore-int">
-<?php
-		$text = $sliders['slider-1']['meta']['texto-presentacion'][0];
-		$content = apply_filters('the_content', $text);
-		$content = str_replace(']]>', ']]&gt;', $content);
-		echo $content;
-?>
-	</div>
-</div>
+
 
 <?php get_footer(); ?>

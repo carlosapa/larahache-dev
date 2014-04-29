@@ -18,11 +18,13 @@
     <link rel="stylesheet" href="<?php bloginfo('template_directory' );?>/js/vendor/lightbox.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory' );?>/css/anythingslider.css">
     <link rel="stylesheet" href="<?php bloginfo('template_directory' );?>/css/animate.css">
-    
+    <link rel="stylesheet" href="<?php bloginfo('template_directory' );?>/css/jquery.fancybox.css" type="text/css" media="screen" />
+
+   
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="<?php bloginfo(' + template_directory + ' );?>/js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+    <script src=" http://code.jquery.com/jquery-migrate-1.0.0.min.js"></script>
     <script src="<?php bloginfo('template_directory' );?>/js/vendor/jquery.anythingslider.min.js"></script>
-    <script src="<?php bloginfo('template_directory' );?>/js/vendor/collage-plus.min.js"></script>
     <script src="<?php bloginfo('template_directory' );?>/js/vendor/modernizr-2.6.2.min.js"></script>
 </head>
 <body <?php body_class(); ?>>

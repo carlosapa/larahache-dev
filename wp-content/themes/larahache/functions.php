@@ -140,4 +140,57 @@ function slider_custom_post_type() {
 add_action( 'init', 'slider_custom_post_type', 0 );
 
 
+// My function to display gallery
+function get_gallery_from_post($id) {
+
+	function get_string_between($string, $start, $end){ //Justin Cook.
+	    $string = " ".$string;
+	    $ini = strpos($string,$start);
+	    if ($ini == 0) return "";
+	    $ini += strlen($start);
+	    $len = strpos($string,$end,$ini) - $ini;
+	    return substr($string,$ini,$len);
+	}
+
+	//procesado de galería
+	$page = get_page($id);
+	$text = $page->post_content;
+	$raw_data = array();
+
+
+	//el formato es: Blablabla [gallery] Blabla [gallery]
+	//$text = wpautop($text);
+	$text = str_replace("]", "[", $text);
+	$text = explode("[", $text);
+
+	for ($i = 0; $i < count($text); $i++) {
+		
+		if ($text !== '') {
+			if ($i % 2 === 0) {
+				$raw_data[$i] = trim($text[$i]);
+			} else {
+				$data = get_string_between($text[$i], 'ids="', '"');
+				$data = explode(',', $data);
+				$raw_data[$i] = $data;
+			}
+		} else {
+			continue;
+		}
+	}
+
+	return $raw_data;
+}
+
+function max_words ($title, $num = 8, $more = '...') {
+	$title = htmlentities($title);
+	$title_out = '';
+	$title = explode(' ', $title);
+	for ($i = 0; $i < $num; $i++) {
+		$title_out .= $title[$i] . ' ';
+	}
+	if(count($title) > $num) {
+		$title_out .= $more;
+	}
+	return html_entity_decode($title_out);
+}
 ?>
